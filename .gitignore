@@ -1,7 +1,10 @@
 /web/bundles/
 /app/bootstrap.php.cache
+/app/AppKernel.php
+/app/AppCache.php
 /app/cache/*
 /app/config/parameters.yml
+/app/config/parameters.yml.dist
 /app/logs/*
 !app/cache/.gitkeep
 !app/logs/.gitkeep
