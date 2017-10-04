@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="IcFrontendBundle\Entity\IcGerencia" table="ic_gerencia">
+    <indexes>
+      <index name="IDX_DC5FC2FB73B102B2" columns="id_direccion"/>
+    </indexes>
+    <id name="idGerencia" type="integer" column="id_gerencia">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="nombre" type="string" column="nombre" length="250" nullable="true"/>
+    <many-to-one field="idDireccion" target-entity="IcDireccion">
+      <join-columns>
+        <join-column name="id_direccion" referenced-column-name="id_direccion"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

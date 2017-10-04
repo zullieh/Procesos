@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="IcFrontendBundle\Entity\IcCentroTrabajo" table="ic_centro_trabajo">
+    <id name="idCentro" type="integer" column="id_centro">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="nombre" type="string" column="nombre" length="250" nullable="true"/>
+    <field name="direccion" type="string" column="direccion" length="250" nullable="true"/>
+    <field name="correo" type="string" column="correo" length="250" nullable="true"/>
+    <field name="telefono" type="string" column="telefono" length="15" nullable="true"/>
+  </entity>
+</doctrine-mapping>

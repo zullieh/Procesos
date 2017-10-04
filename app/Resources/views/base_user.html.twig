@@ -1,0 +1,72 @@
+<!--
+*Creado: Estrada Curiel Zuleyma Jeannette
+*Elaborado: 01 de Septiembre de 2017
+*Modificado:
+*Grupo: Club Tijuana Xoloitzcuintles de Caliente
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
+
+    <title>{% block title %}Club Tijuana Xoloitzcuintles de Caliente{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('l-t.png') }}">
+    <link rel="stylesheet" href="/bundles/icbackend/css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/bundles/icbackend/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bundles/icbackend/css/navstyle.css">
+    {#<link rel="stylesheet" href="/bundles/icfrontend/css/Style.css">#}
+
+</head>
+<body>
+{#<nav class="navbar navbar-default">
+    <div class="navbar-header">
+        <div class="col-md-6 col-md-offset-10">
+        <img alt="Xoloitzcuintles de Caliente" src="/bundles/icbackend/images/l-t.png">
+        </div>
+    </div>
+</nav>#}
+<div class="container-fluid">
+    <div class="row">
+
+        {% for flashMessage in app.session.flashbag.get('success') %}
+            <div class="alert alert-success" role="alert">
+                {{ flashMessage }}
+            </div>
+        {% endfor %}
+        {% for flashMessage in app.session.flashbag.get('warning') %}
+            <div class="alert alert-warning" role="alert">
+                {{ flashMessage }}
+            </div>
+        {% endfor %}
+        {% for flashMessage in app.session.flashbag.get('danger') %}
+            <div  class="alert alert-danger" role="alert">
+                {{ flashMessage }}
+            </div>
+        {% endfor %}
+    </div>
+    <!-- div to log In -->
+    <div class="col-md-12" align="center">
+        <img alt="Xoloitzcuintles de Caliente" src="/bundles/icbackend/images/l-t.png">
+    </div>
+    <br>
+    <div class="panel">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <br>
+</div>
+
+
+{% block javascripts %}
+    <script src="bundles/icbackend/js/jquery.js" type="text/javascript"></script>
+    <script src="bundles/icbackend/js/bootstrap.min.js" type="text/javascript"></script>
+    {#<script src="bundles/icfrontend/js/menuStyle.js" type="text/javascript"></script>#}
+    {#<script src="bundles/icfrontend/js/table.js" type="text/javascript"></script>#}
+
+{% endblock %}
+</body>
+</html>

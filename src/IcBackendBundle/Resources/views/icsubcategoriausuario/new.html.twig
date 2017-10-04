@@ -1,0 +1,17 @@
+{% extends 'base_backend.html.twig' %}
+
+{% block content %}
+    <div align="center">
+        <div class="header">
+            <h1>Nueva Subcategoria en Relaci&oacute;n al Usuario</h1>
+        </div>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input class="btn btn-sm btn-primary" type="submit" value="Create" />
+        <a href="{{ path('icsubcategoriausuario_index') }}"><button type="button" class="btn btn-sm btn-primary btn-create"> Regresar</button></a>
+        {{ form_end(form) }}
+    </div>
+
+
+
+{% endblock %}

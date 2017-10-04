@@ -1,0 +1,106 @@
+{% extends 'base_frontend.html.twig' %}
+{% block content %}
+<div class="col-md-6 col-md-offset-3">
+    <div class="row">
+        <div class="panel panel-danger">
+            <div class="panel-heading" align="center">
+                <img src="/bundles/icfrontend/images/l-t.png" style="width: 90px" align="left">
+                <h2 class="panel-title">Servicios Profesionales S.A de C.V</h2>
+                <h1> Solicitud de Requisici&oacute;n de Compra</h1>
+            </div>
+            <div class="panel-body">
+                <form class="form-inline" id="form1" >
+                    <div class="form-inline" id="folio" align="right">
+                    {{ form_row(form.folioRequisicion) }}
+                    </div>
+                    <div class="form-group" id="form2" style="margin-top: 0">
+                        {{ form_row(form.fechaSolicitud) }}
+                    </div>
+                </form>
+                <form class="form-inline" id="form3">
+                    <div class="form-group">
+                        {{ form_row(form.fechaEntrega) }}
+                    </div>
+                    <div class="form-group" align="right" style="margin-left: 25%">
+                        {{ form_row(form.status) }}
+                    </div>
+                </form>
+                <form class="form-inline" id="form4">
+                    <div class="form-group" style="margin-top: 2%">
+                        {{ form_row(form.idUsuarioSolicitante) }}
+                    </div>
+                    <div class="form-inline" style="margin-left: 51%; margin-top: -5%" >
+                        {{ form_row(form.numeroEmpleado) }}
+                    </div>
+                </form>
+            </div>
+            <form class="form-group" id="form5">
+            <div>
+                <table class="table table-bordered table-hover" id="tab_logic">
+                    <thead>
+                    <tr >
+                        <th class="text-center">
+                            #
+                        </th>
+                        <th class="text-center">
+                            Descripci&oacute;n
+                        </th>
+                        <th class="text-center">
+                            C&oacute;digo Sku
+
+                        </th>
+                        <th class="text-center">
+                            Cantidad
+
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr id='addr0'>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            {{ form_row(form.descripcion) }}
+                            {#<input type="text" name=''  placeholder='Descripción' class="form-control"/>#}
+                        </td>
+                        <td>
+                            {{ form_row(form.codigoSku) }}
+                            {#<input type="text" name='' placeholder='Código Sku' class="form-cont#}{#rol"/>#}
+                        </td>
+                        <td>
+                            {{ form_row(form.cantidad) }}
+                            {#<input type="text" name='' placeholder='Cantidad' class="fo#}{#rm-control"/>#}
+                        </td>
+                    </tr>
+                    <tr id='addr1'></tr>
+                    </tbody>
+                </table>
+                <a id="add_row" class="btn btn-default pull-left">Agregar</a><a id='delete_row' class="pull-right btn btn-default">Eliminar</a>
+            </div>
+            </form>
+            <form id="form6">
+                <div style="margin-top: 10%">
+                    {{ form_row(form.observaciones) }}
+                </div>
+            </form>
+            <form class="form-inline" id="form7">
+                <div style="margin-top: 5%">
+                    {{ form_row(form.firmaSolicitante) }}
+                </div>
+                <div  align="right" style="margin-top: -9%">
+                    {{ form_row(form.firmaAutorizacion) }}
+                </div>
+                <div style="margin-top: 5%" align="center">
+                    <p>La firma de autorización deberá corresponder al propietario del centro de costo</p>
+                </div>
+            </form>
+            <div align="center">
+            <input class=" btn-lg btn-success" type="submit" value="Crear" align="center" />
+            <a href="{{ path('frontend_inicio') }}"><button class="btn btn-lg btn-primary" style="align-content: center">Principal</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

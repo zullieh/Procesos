@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="IcFrontendBundle\Entity\IcComprobacionDeGasto" table="ic_comprobacion_de_gasto">
+    <indexes>
+      <index name="IDX_7B9D72071DFF04D7" columns="id_centro_trabajo"/>
+      <index name="IDX_7B9D72079366C0A" columns="id_usuario_solicitante"/>
+      <index name="IDX_7B9D72078936304A" columns="id_anticipo_de_gasto_folio"/>
+    </indexes>
+    <id name="idComprobacionDeGasto" type="integer" column="id_comprobacion_de_gasto">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="fechaEntrega" type="date" column="fecha_entrega" nullable="true"/>
+    <field name="folioComprobacion" type="string" column="folio_comprobacion" length="255" nullable="true"/>
+    <field name="numeroEmpleado" type="string" column="numero_empleado" length="255" nullable="true"/>
+    <field name="firmaSolicitante" type="text" column="firma_solicitante" nullable="true"/>
+    <field name="firmaAutorizacion" type="text" column="firma_autorizacion" nullable="true"/>
+    <field name="observaciones" type="text" column="observaciones" nullable="true"/>
+    <field name="cuenta" type="string" column="cuenta" length="255" nullable="true"/>
+    <field name="concepto" type="string" column="concepto" length="255" nullable="true"/>
+    <field name="importe" type="string" column="importe" length="255" nullable="true"/>
+    <field name="iva" type="string" column="iva" length="255" nullable="true"/>
+    <field name="total" type="string" column="total" length="255" nullable="true"/>
+    <many-to-one field="idCentroTrabajo" target-entity="IcCentroTrabajo">
+      <join-columns>
+        <join-column name="id_centro_trabajo" referenced-column-name="id_centro"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idUsuarioSolicitante" target-entity="IcUsuario">
+      <join-columns>
+        <join-column name="id_usuario_solicitante" referenced-column-name="id_usuario"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idAnticipoDeGastoFolio" target-entity="IcAnticipoDeGasto">
+      <join-columns>
+        <join-column name="id_anticipo_de_gasto_folio" referenced-column-name="id_anticipo_de_gasto"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

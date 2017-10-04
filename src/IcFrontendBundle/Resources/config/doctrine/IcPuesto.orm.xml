@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="IcFrontendBundle\Entity\IcPuesto" table="ic_puesto">
+    <indexes>
+      <index name="IDX_6B316E2A5CB4216A" columns="id_area"/>
+    </indexes>
+    <id name="idPuesto" type="integer" column="id_puesto">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="nombre" type="string" column="nombre" length="250" nullable="true"/>
+    <many-to-one field="idArea" target-entity="IcArea">
+      <join-columns>
+        <join-column name="id_area" referenced-column-name="id_area"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

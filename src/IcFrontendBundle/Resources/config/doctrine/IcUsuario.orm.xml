@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="IcFrontendBundle\Entity\IcUsuario" table="ic_usuario">
+    <indexes>
+      <index name="IDX_989974E442B686" columns="id_centro"/>
+      <index name="IDX_989974E473B102B2" columns="id_direccion"/>
+      <index name="IDX_989974E43E83D982" columns="id_gerencia"/>
+      <index name="IDX_989974E45CB4216A" columns="id_area"/>
+      <index name="IDX_989974E461F46733" columns="id_puesto"/>
+      <index name="IDX_989974E4CE25AE0A" columns="id_categoria"/>
+      <index name="IDX_989974E4F9BECC66" columns="id_subcategoria"/>
+    </indexes>
+    <id name="idUsuario" type="integer" column="id_usuario">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="nombre" type="string" column="nombre" length="250" nullable="true"/>
+    <field name="apellido" type="string" column="apellido" length="250" nullable="true"/>
+    <field name="correo" type="string" column="correo" length="250" nullable="true"/>
+    <field name="contrasena" type="string" column="contrasena" length="250" nullable="true"/>
+    <field name="fechaInicio" type="date" column="fecha_inicio" nullable="true"/>
+    <field name="fechaModificacion" type="date" column="fecha_modificacion" nullable="true"/>
+    <field name="telefono" type="string" column="telefono" length="15" nullable="true"/>
+    <many-to-one field="idCentro" target-entity="IcCentroTrabajo">
+      <join-columns>
+        <join-column name="id_centro" referenced-column-name="id_centro"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idDireccion" target-entity="IcDireccion">
+      <join-columns>
+        <join-column name="id_direccion" referenced-column-name="id_direccion"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idGerencia" target-entity="IcGerencia">
+      <join-columns>
+        <join-column name="id_gerencia" referenced-column-name="id_gerencia"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idArea" target-entity="IcArea">
+      <join-columns>
+        <join-column name="id_area" referenced-column-name="id_area"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idPuesto" target-entity="IcPuesto">
+      <join-columns>
+        <join-column name="id_puesto" referenced-column-name="id_puesto"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idCategoria" target-entity="IcCategoria">
+      <join-columns>
+        <join-column name="id_categoria" referenced-column-name="id_categoria"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idSubcategoria" target-entity="IcSubcategoria">
+      <join-columns>
+        <join-column name="id_subcategoria" referenced-column-name="id_subcategoria"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

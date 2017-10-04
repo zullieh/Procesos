@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Icrequisiciondecompra</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Foliorequisicion</th>
+                <td>{{ icRequisicionDeCompra.folioRequisicion }}</td>
+            </tr>
+            <tr>
+                <th>Fechasolicitud</th>
+                <td>{% if icRequisicionDeCompra.fechaSolicitud %}{{ icRequisicionDeCompra.fechaSolicitud|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Fechaentrega</th>
+                <td>{% if icRequisicionDeCompra.fechaEntrega %}{{ icRequisicionDeCompra.fechaEntrega|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{% if icRequisicionDeCompra.status %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Numeroempleado</th>
+                <td>{{ icRequisicionDeCompra.numeroEmpleado }}</td>
+            </tr>
+            <tr>
+                <th>Observaciones</th>
+                <td>{{ icRequisicionDeCompra.observaciones }}</td>
+            </tr>
+            <tr>
+                <th>Firmasolicitante</th>
+                <td>{{ icRequisicionDeCompra.firmaSolicitante }}</td>
+            </tr>
+            <tr>
+                <th>Firmaautorizacion</th>
+                <td>{{ icRequisicionDeCompra.firmaAutorizacion }}</td>
+            </tr>
+            <tr>
+                <th>Descripcion</th>
+                <td>{{ icRequisicionDeCompra.descripcion }}</td>
+            </tr>
+            <tr>
+                <th>Codigosku</th>
+                <td>{{ icRequisicionDeCompra.codigoSku }}</td>
+            </tr>
+            <tr>
+                <th>Cantidad</th>
+                <td>{{ icRequisicionDeCompra.cantidad }}</td>
+            </tr>
+            <tr>
+                <th>Idrequisiciondecompra</th>
+                <td>{{ icRequisicionDeCompra.idRequisicionDeCompra }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('icrequisiciondecompra_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('icrequisiciondecompra_edit', { 'idRequisicionDeCompra': icRequisicionDeCompra.idRequisicionDeCompra }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

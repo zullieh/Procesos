@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="IcFrontendBundle\Entity\IcMensaje" table="ic_mensaje">
+    <indexes>
+      <index name="IDX_219FD9B8FCF8192D" columns="id_usuario"/>
+      <index name="IDX_219FD9B8D24EAA9" columns="id_comprobacion_de_gasto"/>
+      <index name="IDX_219FD9B8168288E5" columns="id_anticipo_de_gasto"/>
+      <index name="IDX_219FD9B880C5F7" columns="id_requisicion_de_compra"/>
+      <index name="IDX_219FD9B8C9DF8433" columns="id_reembolso_de_gasto"/>
+    </indexes>
+    <id name="idMensaje" type="integer" column="id_mensaje">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="fechaEnvio" type="date" column="fecha_envio" nullable="true"/>
+    <field name="fechaRecepcion" type="date" column="fecha_recepcion" nullable="true"/>
+    <field name="fechaLectura" type="date" column="fecha_lectura" nullable="true"/>
+    <field name="respuesta" type="text" column="respuesta" nullable="true"/>
+    <field name="mensaje" type="text" column="mensaje" nullable="true"/>
+    <many-to-one field="idUsuario" target-entity="IcUsuario">
+      <join-columns>
+        <join-column name="id_usuario" referenced-column-name="id_usuario"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idComprobacionDeGasto" target-entity="IcComprobacionDeGasto">
+      <join-columns>
+        <join-column name="id_comprobacion_de_gasto" referenced-column-name="id_comprobacion_de_gasto"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idAnticipoDeGasto" target-entity="IcAnticipoDeGasto">
+      <join-columns>
+        <join-column name="id_anticipo_de_gasto" referenced-column-name="id_anticipo_de_gasto"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idRequisicionDeCompra" target-entity="IcRequisicionDeCompra">
+      <join-columns>
+        <join-column name="id_requisicion_de_compra" referenced-column-name="id_requisicion_de_compra"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idReembolsoDeGasto" target-entity="IcReembolsoDeGasto">
+      <join-columns>
+        <join-column name="id_reembolso_de_gasto" referenced-column-name="id_reembolso_gasto"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

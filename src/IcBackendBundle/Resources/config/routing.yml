@@ -1,0 +1,35 @@
+backend_inicio:
+    path: /
+    defaults: { _controller: IcBackendBundle:Default:index}
+
+backend_centro:
+    path: /iccentrotrabajo
+    defaults: { _controller: IcBackendBundle:iccentrotrabajo:index}
+
+backend_direccion:
+    path: /icdireccion
+    defaults: { _controller: IcBackendBundle:icdireccion:index}
+
+backend_gerencia:
+    path: /icgerencia
+    defaults: { _controller: IcBackendBundle:icgerencia:index}
+
+backend_area:
+    path: /icarea
+    defaults: { _controller: IcBackendBundle:icarea:index}
+
+backend_puesto:
+    path: /icpuesto
+    defaults: { _controller: IcBackendBundle:icpuesto:index}
+
+backend_categoria:
+    path: /iccategoria
+    defaults: { _controller: IcBackendBundle:iccategoria:index}
+
+backend_subcategoria:
+    path: /icsubcategoria
+    defaults: { _controller: IcBackendBundle:icsubcategoria:index}
+
+backend_usuario:
+    path: /icusuario
+    defaults: { _controller: IcBackendBundle:icusuario:index}

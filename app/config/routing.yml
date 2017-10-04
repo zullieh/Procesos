@@ -1,0 +1,39 @@
+ic_frontend_ic_anticipo_de_gasto:
+    resource: "@IcFrontendBundle/Controller/IcAnticipoDeGastoController.php"
+    type:     annotation
+
+ic_backend:
+    resource: "@IcBackendBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+ic_frontend:
+    resource: "@IcFrontendBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+ic_usuarios:
+    resource: "@IcUsuariosBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+frontend:
+    resource: "@IcFrontendBundle/Resources/config/routing.yml"
+    prefix:   /
+
+backend:
+    resource: "@IcBackendBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+easy_admin_bundle:
+    resource: "@EasyAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /easyadmin

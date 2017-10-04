@@ -1,0 +1,59 @@
+{% extends 'base_frontend.html.twig' %}
+
+{% block body %}
+    <h1>Icrequisiciondecompras list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Foliorequisicion</th>
+                <th>Fechasolicitud</th>
+                <th>Fechaentrega</th>
+                <th>Status</th>
+                <th>Numeroempleado</th>
+                <th>Observaciones</th>
+                <th>Firmasolicitante</th>
+                <th>Firmaautorizacion</th>
+                <th>Descripcion</th>
+                <th>Codigosku</th>
+                <th>Cantidad</th>
+                <th>Idrequisiciondecompra</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for icRequisicionDeCompra in icRequisicionDeCompras %}
+            <tr>
+                <td><a href="{{ path('icrequisiciondecompra_show', { 'idRequisicionDeCompra': icRequisicionDeCompra.idRequisicionDeCompra }) }}">{{ icRequisicionDeCompra.folioRequisicion }}</a></td>
+                <td>{% if icRequisicionDeCompra.fechaSolicitud %}{{ icRequisicionDeCompra.fechaSolicitud|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if icRequisicionDeCompra.fechaEntrega %}{{ icRequisicionDeCompra.fechaEntrega|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if icRequisicionDeCompra.status %}Yes{% else %}No{% endif %}</td>
+                <td>{{ icRequisicionDeCompra.numeroEmpleado }}</td>
+                <td>{{ icRequisicionDeCompra.observaciones }}</td>
+                <td>{{ icRequisicionDeCompra.firmaSolicitante }}</td>
+                <td>{{ icRequisicionDeCompra.firmaAutorizacion }}</td>
+                <td>{{ icRequisicionDeCompra.descripcion }}</td>
+                <td>{{ icRequisicionDeCompra.codigoSku }}</td>
+                <td>{{ icRequisicionDeCompra.cantidad }}</td>
+                <td>{{ icRequisicionDeCompra.idRequisicionDeCompra }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('icrequisiciondecompra_show', { 'idRequisicionDeCompra': icRequisicionDeCompra.idRequisicionDeCompra }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('icrequisiciondecompra_edit', { 'idRequisicionDeCompra': icRequisicionDeCompra.idRequisicionDeCompra }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('icrequisiciondecompra_new') }}">Create a new icRequisicionDeCompra</a>
+        </li>
+    </ul>
+{% endblock %}

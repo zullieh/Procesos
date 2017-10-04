@@ -1,0 +1,70 @@
+{% extends 'base_backend.html.twig' %}
+
+{% block content %}
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-default panel-table">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Filtrar Tabla</h3>
+                            <div class="pull-right">
+                            <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+                                <i class="fa fa-filter fa-2x"></i>
+                            </span>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filtrar Resultados" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-sm btn-success btn-block">Nuevo Registro</button>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body table-responsive">
+                <table class="table table-striped table-bordered table-list">
+                    <thead>
+            <tr>
+                <th>Idsubcategoriausuario</th>
+                <th>Cantidad</th>
+                <th>Idcategoria</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for icSubcategoriaUsuario in icSubcategoriaUsuarios %}
+            <tr>
+                <td><a href="{{ path('icsubcategoriausuario_show', { 'idSubcategoriaUsuario': icSubcategoriaUsuario.idSubcategoriaUsuario }) }}">{{ icSubcategoriaUsuario.idSubcategoriaUsuario }}</a></td>
+                <td>{{ icSubcategoriaUsuario.cantidad }}</td>
+                <td>{{ icSubcategoriaUsuario.idCategoria }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('icsubcategoriausuario_show', { 'idSubcategoriaUsuario': icSubcategoriaUsuario.idSubcategoriaUsuario }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('icsubcategoriausuario_edit', { 'idSubcategoriaUsuario': icSubcategoriaUsuario.idSubcategoriaUsuario }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('icsubcategoriausuario_new') }}">Create a new icSubcategoriaUsuario</a>
+        </li>
+        <li>
+            <a href="{{ path('backend_inicio') }}"><button type="button">Inicio</button></a>
+        </li>
+    </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

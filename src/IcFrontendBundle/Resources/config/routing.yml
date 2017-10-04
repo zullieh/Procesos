@@ -1,0 +1,15 @@
+frontend_control:
+    path: /tipo-control.html
+    defaults: { _controller: IcFrontendBundle:Default:tipocontrol}
+
+frontend_tipo_solicitud:
+    path: /tipo-solicitud.html
+    defaults: { _controller: IcFrontendBundle:Default:tiposolicitud}
+
+frontend_solicitud_requisicion:
+    path: /nueva-requisicion.html
+    defaults: { _controller: IcFrontendBundle:IcRequisicionDeCompra:new}
+
+frontend_inicio:
+    path: /inicio.html
+    defaults: { _controller: IcFrontendBundle:Default:index}

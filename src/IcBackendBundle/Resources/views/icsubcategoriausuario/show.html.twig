@@ -1,0 +1,32 @@
+{% extends 'base_backend.html.twig' %}
+
+{% block content %}
+<div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+        <table class="table table-striped custab">
+            <tbody>
+            <tr>
+                <th>Idsubcategoriausuario</th>
+                <td>{{ icSubcategoriaUsuario.idSubcategoriaUsuario }}</td>
+            </tr>
+            <tr>
+                <th>Cantidad</th>
+                <td>{{ icSubcategoriaUsuario.cantidad }}</td>
+            </tr>
+            <tr>
+                <th>Idcategoria</th>
+                <td>{{ icSubcategoriaUsuario.idCategoria }}</td>
+            </tr>
+        </tbody>
+    </table>
+        <div class="col col-xs-6 text-right">
+            <a href="{{ path('icsubcategoriausuario_new') }}"><button type="button"  class="btn btn-sm btn-primary btn-create">Nuevo</button></a>
+            <a href="{{ path('icsubcategoriausuario_index') }}"><button type="button" class="btn btn-sm btn-primary btn-create"> Regresar</button></a>
+            <a href="{{ path('icsubcategoriausuario_edit', { 'idSubcategoriaUsuario': icSubcategoriaUsuario.idSubcategoriaUsuario }) }}"><button type="button" class="btn btn-sm btn-primary btn-create">Editar</button></a>
+        </div>
+            {{ form_start(delete_form) }}
+                <input class="btn btn-sm btn-primary" type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+    </div>
+</div>
+{% endblock %}

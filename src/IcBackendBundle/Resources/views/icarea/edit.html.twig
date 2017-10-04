@@ -1,0 +1,54 @@
+{% extends 'base_backend.html.twig' %}
+
+{% block content %}
+    <div class="col-md-6 col-md-offset-1" style="margin-top: 5%">
+        <div class="row form-group">
+            <label for="">Gerencia</label>
+            <div class="input-group">
+                <input type="text" disabled="disabled" value="{{ icArea.idGerencia }}"  class="form-control">
+                <span class="input-group-addon warning"><i class="fa fa-check" aria-hidden="true"></i></span></span>
+            </div>
+        </div>
+        <div class="row form-group">
+            <label for="">Nombre</label>
+            <div class="input-group">
+                <input type="text" value="{{ icArea.nombre }}"  class="form-control">
+                <span class="input-group-addon warning"><i class="fa fa-check" aria-hidden="true"></i></span></span>
+            </div>
+        </div>
+        <div class="row form-group">
+            <label for="">Correo Electr&oacute;nico</label>
+            <div class="input-group">
+                <input type="text" value="{{ icArea.correo }}"  class="form-control">
+                <span class="input-group-addon warning"><i class="fa fa-check" aria-hidden="true"></i></span></span>
+            </div>
+        </div>
+        <div class="row form-group">
+            <label for="">Tel&eacute;fono</label>
+            <div class="input-group">
+                <input type="text" value="{{ icArea.telefono }}"  class="form-control">
+                <span class="input-group-addon warning"><i class="fa fa-check" aria-hidden="true"></i></span></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5" style="margin-top: 5%">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title" align="center">
+                    <i class="fa fa-star" aria-hidden="true"></i> Acciones</h3>
+            </div>
+            <div class="panel-body">
+                <div class="" align="center">
+                    <input class="btn btn-sm btn-success" type="submit" value="Salvar" />
+                    <a class="btn btn-sm btn-default" href="{{ path('icarea_show', { 'idArea': icArea.idArea }) }}">Regresar</a>
+                    <input class="btn btn-sm btn-danger" type="submit" value="Borrar">
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ form_start(delete_form) }}
+    {{ form_end(delete_form) }}
+
+
+
+{% endblock %}

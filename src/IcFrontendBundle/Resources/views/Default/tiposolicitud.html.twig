@@ -1,0 +1,26 @@
+{% extends 'base_frontend.html.twig' %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-2 col-md-offset-1" align="center">
+                    <a href="#" ><img src="/bundles/icfrontend/images/anticipo.png"></a>
+                    <a href="#"><p style="margin-left: 30px">Solicitud de Anticipo de Gastos</p></a>
+        </div>
+        <div class="col-md-2 col-md-offset-1" align="center">
+                    <a href="#" ><img src="/bundles/icfrontend/images/reembolso.png"></a>
+                    <a href="#"><p style="margin-left: 30px">Solicitud de Reembolso de Gasto</p></a>
+        </div>
+        <div class="col-md-2 col-md-offset-1" align="center">
+                    <a href="{{ path('frontend_solicitud_requisicion') }}" ><img src="/bundles/icfrontend/images/compra.png"></a>
+                    <a href="{{ path('frontend_solicitud_requisicion') }}"><p style="margin-left: 30px">Solicitud de Requisici&oacute;n de Compra</p></a>
+        </div>
+        <div class="col-md-2 col-md-offset-1" align="center">
+                    <a href="#" ><img src="/bundles/icfrontend/images/comprobacion.png"></a>
+                    <a href="#"><p style="margin-left: 30px">Solicitud de Comprobaci&oacute;n de Gastos</p></a>
+        </div>
+    </div>
+
+
+
+{% endblock %}

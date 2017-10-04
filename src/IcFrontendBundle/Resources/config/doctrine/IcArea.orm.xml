@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="IcFrontendBundle\Entity\IcArea" table="ic_area">
+    <indexes>
+      <index name="IDX_41B111D23E83D982" columns="id_gerencia"/>
+    </indexes>
+    <id name="idArea" type="integer" column="id_area">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="nombre" type="string" column="nombre" length="250" nullable="true"/>
+    <field name="correo" type="string" column="correo" length="250" nullable="true"/>
+    <field name="telefono" type="string" column="telefono" length="15" nullable="true"/>
+    <many-to-one field="idGerencia" target-entity="IcGerencia">
+      <join-columns>
+        <join-column name="id_gerencia" referenced-column-name="id_gerencia"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

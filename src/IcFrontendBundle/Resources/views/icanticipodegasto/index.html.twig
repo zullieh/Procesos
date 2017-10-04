@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Icanticipodegastos list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Folioanticipo</th>
+                <th>Fechasolicitud</th>
+                <th>Metodopago</th>
+                <th>Numerotarjeta</th>
+                <th>Numerocuenta</th>
+                <th>Cuentacontable</th>
+                <th>Numeroempleado</th>
+                <th>Tipomoneda</th>
+                <th>Destinodeviaje</th>
+                <th>Fechadesde</th>
+                <th>Fechahasta</th>
+                <th>Motivodelviaje</th>
+                <th>Firmasolicitante</th>
+                <th>Firmaautorizacion</th>
+                <th>Idanticipodegasto</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for icAnticipoDeGasto in icAnticipoDeGastos %}
+            <tr>
+                <td><a href="{{ path('icanticipodegasto_show', { 'idAnticipoDeGasto': icAnticipoDeGasto.idAnticipoDeGasto }) }}">{{ icAnticipoDeGasto.folioAnticipo }}</a></td>
+                <td>{% if icAnticipoDeGasto.fechaSolicitud %}{{ icAnticipoDeGasto.fechaSolicitud|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ icAnticipoDeGasto.metodoPago }}</td>
+                <td>{{ icAnticipoDeGasto.numeroTarjeta }}</td>
+                <td>{{ icAnticipoDeGasto.numeroCuenta }}</td>
+                <td>{{ icAnticipoDeGasto.cuentaContable }}</td>
+                <td>{{ icAnticipoDeGasto.numeroEmpleado }}</td>
+                <td>{{ icAnticipoDeGasto.tipoMoneda }}</td>
+                <td>{{ icAnticipoDeGasto.destinoDeViaje }}</td>
+                <td>{% if icAnticipoDeGasto.fechaDesde %}{{ icAnticipoDeGasto.fechaDesde|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if icAnticipoDeGasto.fechaHasta %}{{ icAnticipoDeGasto.fechaHasta|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ icAnticipoDeGasto.motivoDelViaje }}</td>
+                <td>{{ icAnticipoDeGasto.firmaSolicitante }}</td>
+                <td>{{ icAnticipoDeGasto.firmaAutorizacion }}</td>
+                <td>{{ icAnticipoDeGasto.idAnticipoDeGasto }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('icanticipodegasto_show', { 'idAnticipoDeGasto': icAnticipoDeGasto.idAnticipoDeGasto }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('icanticipodegasto_edit', { 'idAnticipoDeGasto': icAnticipoDeGasto.idAnticipoDeGasto }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('icanticipodegasto_new') }}">Create a new icAnticipoDeGasto</a>
+        </li>
+    </ul>
+{% endblock %}

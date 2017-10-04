@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Icanticipodegasto</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Folioanticipo</th>
+                <td>{{ icAnticipoDeGasto.folioAnticipo }}</td>
+            </tr>
+            <tr>
+                <th>Fechasolicitud</th>
+                <td>{% if icAnticipoDeGasto.fechaSolicitud %}{{ icAnticipoDeGasto.fechaSolicitud|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Metodopago</th>
+                <td>{{ icAnticipoDeGasto.metodoPago }}</td>
+            </tr>
+            <tr>
+                <th>Numerotarjeta</th>
+                <td>{{ icAnticipoDeGasto.numeroTarjeta }}</td>
+            </tr>
+            <tr>
+                <th>Numerocuenta</th>
+                <td>{{ icAnticipoDeGasto.numeroCuenta }}</td>
+            </tr>
+            <tr>
+                <th>Cuentacontable</th>
+                <td>{{ icAnticipoDeGasto.cuentaContable }}</td>
+            </tr>
+            <tr>
+                <th>Numeroempleado</th>
+                <td>{{ icAnticipoDeGasto.numeroEmpleado }}</td>
+            </tr>
+            <tr>
+                <th>Tipomoneda</th>
+                <td>{{ icAnticipoDeGasto.tipoMoneda }}</td>
+            </tr>
+            <tr>
+                <th>Destinodeviaje</th>
+                <td>{{ icAnticipoDeGasto.destinoDeViaje }}</td>
+            </tr>
+            <tr>
+                <th>Fechadesde</th>
+                <td>{% if icAnticipoDeGasto.fechaDesde %}{{ icAnticipoDeGasto.fechaDesde|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Fechahasta</th>
+                <td>{% if icAnticipoDeGasto.fechaHasta %}{{ icAnticipoDeGasto.fechaHasta|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Motivodelviaje</th>
+                <td>{{ icAnticipoDeGasto.motivoDelViaje }}</td>
+            </tr>
+            <tr>
+                <th>Firmasolicitante</th>
+                <td>{{ icAnticipoDeGasto.firmaSolicitante }}</td>
+            </tr>
+            <tr>
+                <th>Firmaautorizacion</th>
+                <td>{{ icAnticipoDeGasto.firmaAutorizacion }}</td>
+            </tr>
+            <tr>
+                <th>Idanticipodegasto</th>
+                <td>{{ icAnticipoDeGasto.idAnticipoDeGasto }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('icanticipodegasto_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('icanticipodegasto_edit', { 'idAnticipoDeGasto': icAnticipoDeGasto.idAnticipoDeGasto }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

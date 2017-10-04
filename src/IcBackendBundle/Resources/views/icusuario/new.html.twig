@@ -1,0 +1,40 @@
+{% extends 'base_backend.html.twig' %}
+
+{% block content %}
+    <div class="col-md-6">
+        <form class="form-group">
+            <div align="center">
+                <div style="text-align: left">
+                    {{ form_row(form.idCentro) }}
+                    {{ form_row(form.idDireccion) }}
+                    {{ form_row(form.idGerencia) }}
+                    {{ form_row(form.idArea) }}
+                    {{ form_row(form.idPuesto) }}
+                    {{ form_row(form.idCategoria) }}
+                    {{ form_row(form.idSubcategoria) }}
+                    {{ form_row(form.nombre) }}
+                    {{ form_row(form.apellido) }}
+                    {{ form_row(form.correo) }}
+                    {{ form_row(form.contrasena) }}
+                    {{ form_row(form.fechaInicio) }}
+                    {{ form_row(form.fechaModificacion) }}
+                    {{ form_row(form.telefono) }}
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-5" style="margin-top: 5%">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title" align="center">
+                    <i class="fa fa-star" aria-hidden="true"></i> Acciones</h3>
+            </div>
+            <div class="panel-body">
+                <div class="" align="center">
+                    <input class="btn btn-sm btn-success" type="submit" value="Crear" />
+                    <a href="{{ path('icusuario_index') }}"><button type="button" class="btn btn-sm btn-default"> Regresar</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
